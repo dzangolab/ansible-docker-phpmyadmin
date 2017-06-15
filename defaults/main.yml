@@ -1,0 +1,3 @@
+---
+phpmyadmin_traefik_frontend_rule: ''
+phpmyadmin_traefik_priority: 1

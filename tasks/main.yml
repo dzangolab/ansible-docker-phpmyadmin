@@ -1,0 +1,19 @@
+---
+- name: Run phpmyadmin
+  docker_container:
+    image: phpmyadmin/phpmyadmin:latest
+    name: phpmyadmin
+    env:
+      PMA_ABSOLUTE_URI: "{{ phpmyadmin_absolute_uri }}"
+      PMA_HOSTS: "{{ phpmyadmin_mysql_hosts|join(',') }}"
+    labels:
+      traefik.backend: phpmyadmin
+      traefik.frontend.rule: "{{ phpmyadmin_traefik_frontend_rule }}"
+      traefik.port: "80"
+      traefik.priority:"{{ phpmyadmin_traefik_priority }}"
+    networks:
+      - name: "{{ phpmyadmin_network }}"
+    pull: true
+    recreate: true
+    restart_policy: always
+    state: "{{ phpmyadmin_state }}"
