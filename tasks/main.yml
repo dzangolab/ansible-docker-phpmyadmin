@@ -10,7 +10,7 @@
       traefik.backend: phpmyadmin
       traefik.frontend.rule: "{{ phpmyadmin_traefik_frontend_rule }}"
       traefik.port: "80"
-      traefik.priority:"{{ phpmyadmin_traefik_priority }}"
+      traefik.priority: "{{ phpmyadmin_traefik_priority }}"
     networks:
       - name: "{{ phpmyadmin_network }}"
     pull: true
