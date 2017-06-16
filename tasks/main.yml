@@ -1,4 +1,9 @@
 ---
+- name: Create network
+  docker_network:
+    driver: bridge
+    name: "{{ phpmyadmin_network }}"
+
 - name: Run phpmyadmin
   docker_container:
     image: phpmyadmin/phpmyadmin:latest
@@ -9,6 +14,7 @@
     labels:
       traefik.backend: phpmyadmin
       traefik.frontend.rule: "{{ phpmyadmin_traefik_frontend_rule }}"
+      traefik_network: "{{ phpmyadmin_traefik_network }}"
       traefik.port: "80"
       traefik.priority: "{{ phpmyadmin_traefik_priority }}"
     networks:
