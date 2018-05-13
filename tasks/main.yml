@@ -1,9 +1,4 @@
 ---
-- name: Create network
-  docker_network:
-    driver: bridge
-    name: "{{ phpmyadmin_network }}"
-
 - name: Run phpmyadmin
   docker_container:
     image: phpmyadmin/phpmyadmin:latest
@@ -17,9 +12,15 @@
       traefik_network: "{{ phpmyadmin_traefik_network }}"
       traefik.port: "80"
       traefik.priority: "{{ phpmyadmin_traefik_priority }}"
-    networks:
-      - name: "{{ phpmyadmin_network }}"
     pull: true
     recreate: true
     restart_policy: always
     state: "{{ phpmyadmin_state }}"
+
+- name: Create network
+  docker_network:
+    driver: bridge
+    name: "{{ item }}"
+    connected: traefik
+  with_items: "{{ phpmyadmin_networks }}"
+  ignore_errors: yes
