@@ -1,8 +1,9 @@
 galaxy_info:
+  role_name: docker-phpmyadmin
   author: Olivier Pichon
   company: your company (optional)
 
-  license: license (MIT)
+  license: MIT
 
   min_ansible_version: 1.2
 
