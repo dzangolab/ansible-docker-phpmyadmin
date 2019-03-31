@@ -19,6 +19,7 @@
 
 - name: Create network
   docker_network:
+    appends: true
     driver: bridge
     name: "{{ item }}"
     connected: phpmyadmin
