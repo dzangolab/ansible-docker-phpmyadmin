@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: docker-phpmyadmin
-  desciption: Install phpmyadmin as a docker container
+  description: Install phpmyadmin as a docker container
   author: Olivier Pichon
   company: United Asian Management
 
