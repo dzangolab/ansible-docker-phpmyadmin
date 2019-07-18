@@ -2,7 +2,7 @@ galaxy_info:
   role_name: docker-phpmyadmin
   description: Install phpmyadmin as a docker container
   author: Olivier Pichon
-  company: Dzango techologies Limited
+  company: Dzango Technologies Limited
 
   license: MIT
 
