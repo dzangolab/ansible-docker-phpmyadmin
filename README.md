@@ -1,4 +1,4 @@
-opichon.docker-phpmyadmin
+dzangolab.docker-phpmyadmin
 =========
 
 Runs phpmyadmin as a docker container.
@@ -29,7 +29,7 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: servers
       roles:
         - name: Deploy phpmyadmin
-         	role: opichon.docker-phpmyadmin
+         	role: dzaangolab.docker-phpmyadmin
          	phpmyadmin_absolute_uri: https://pma.mydomain.com
          	phpmyadmin_mysqlhosts: [mysql55, mysql56, mysql57]
          	phpmyadmin_network: default

@@ -2,7 +2,7 @@ galaxy_info:
   role_name: docker-phpmyadmin
   description: Install phpmyadmin as a docker container
   author: Olivier Pichon
-  company: United Asian Management
+  company: Dzango techologies Limited
 
   license: MIT
 
@@ -17,6 +17,6 @@ galaxy_info:
     - all
 
   galaxy_tags:
-    - phpmyadmins
+    - phpmyadmin
 
 dependencies: []
